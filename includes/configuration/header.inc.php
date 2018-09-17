@@ -7,9 +7,9 @@
         <meta name="description" content="">
         <meta name="author" content="FIREHORSE">
 
-         <title><?php _p($strPageTitle." - Kcoin®"); ?></title>
+         <title><?php _p($strPageTitle." - SMS®"); ?></title>
 
-        <link rel="shortcut icon" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/sms_icon.ico">
 
         <!-- Stylesheets -->
         <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/css/bootstrap.min.css">
@@ -17,7 +17,8 @@
         <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/css/site.min.css">
         <!-- Se agrega para cambiar color-->
         <!-- <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/cyan.css"> -->
-        <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/purple.css">
+        <!-- <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/purple.css"> -->
+        <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/green.css">
         
         <!-- Plugins -->
         <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/vendor/animsition/animsition.min.css">
@@ -95,11 +96,6 @@
             .nav-tabs-solid>li.active>a, .nav-tabs-solid>li.active>a:focus, .nav-tabs-solid>li.active>a:hover{
                 font-weight: 500;
             }
-
-
-
-
-
 
             /* QDateTimePicker */
             span.datetimepicker {}
@@ -221,8 +217,8 @@ function javarefresh(idfrom,idbutton,idwating){
                     <i class="icon wb-more-horizontal" aria-hidden="true"></i>
                 </button>
                 <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
-                    <img class="navbar-brand-logo" src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/logo.png" title="iGo Ads">
-                    <span class="navbar-brand-text">KCOIN</span>
+                    <!--<img class="navbar-brand-logo" src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/logo.png" title="iGo Ads">-->
+                    <span class="navbar-brand-text">SMS</span>
                 </div>
                 <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-search"
                         data-toggle="collapse">
@@ -270,8 +266,8 @@ function javarefresh(idfrom,idbutton,idwating){
                                aria-expanded="false" role="button" style="padding-right: 1px;padding-left:  1px">
                                 <div style=" font-size:14px;font-family: Roboto,sans-serif;color: #fff;box-sizing: border-box;font-weight: 500;padding-right: 1px;">
                                     <?php
-                                    $admin = @unserialize($_SESSION['DatosAdministrador']);
-                                    $usuario = @unserialize($_SESSION['DatosUsuario']);
+                                    $admin = @unserialize($_SESSION['smsAdmin']);
+                                    $usuario = @unserialize($_SESSION['smsUser']);
                                     if ($usuario) {
                                         
                                         echo $usuario->Email;
@@ -447,43 +443,21 @@ if ($usuario) {
                                                 <span class="site-menu-title">View Profile</span>
                                             </a>
                                         </li>
-                                       <!--  <li id="activeKcoinVersion" class="site-menu-item">
-                                            <a class="animsition-link" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/kcoinversion" data-slug="layout-menu-collapsed">
-                                                <i class="site-menu-icon " aria-hidden="true"></i>
-                                                <span class="site-menu-title">Kcoin Versions</span>
-                                            </a>
-                                        </li> -->
                                     </ul>
                                 </li>
-                              <!--  <li id="activeShops" class="site-menu-item has-sub">
-                                    <a href="javascript:void(0)" data-slug="layout">
-                                        <i class="site-menu-icon fa-bank" aria-hidden="true"></i>
-                                        <span class="site-menu-title">Tiendas</span>
-                                        <span class="site-menu-arrow"></span>
-                                    </a>
-                                    <ul class="site-menu-sub">
-                                        <li id="activeViewShops" class="site-menu-item">
-                                            <a class="animsition-link" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/shops" data-slug="layout-menu-collapsed">
-                                                <i class="site-menu-icon " aria-hidden="true"></i>
-                                                <span class="site-menu-title">Ver Tiendas</span>
-                                            </a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                              -->
+                              
 
                                  <li id="activeUsers" class="site-menu-item has-sub">
                                     <a href="javascript:void(0)" data-slug="layout">
-                                        <i class="site-menu-icon wb-users" aria-hidden="true"></i>
-                                        <span class="site-menu-title">Users</span>
+                                        <i class="far fa-envelope"></i>
+                                        <span class="site-menu-title">Confirmations</span>
                                         <span class="site-menu-arrow"></span>
                                     </a>
                                     <ul class="site-menu-sub">
                                         <li id="activeViewUsers" class="site-menu-item">
-                                            <a class="animsition-link" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/users" data-slug="layout-menu-collapsed">
+                                            <a class="animsition-link" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/confirmations" data-slug="layout-menu-collapsed">
                                                 <i class="site-menu-icon " aria-hidden="true"></i>
-                                                <span class="site-menu-title">View Users</span>
+                                                <span class="site-menu-title">View Confirmations</span>
                                             </a>
                                         </li>
 

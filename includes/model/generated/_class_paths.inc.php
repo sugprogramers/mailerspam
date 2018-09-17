@@ -6,25 +6,11 @@
 		QApplicationBase::$ClassFile['administratormetacontrol'] = __META_CONTROLS__ . '/AdministratorMetaControl.class.php';
 		QApplicationBase::$ClassFile['administratordatagrid'] = __META_CONTROLS__ . '/AdministratorDataGrid.class.php';
 
-	// ClassPaths for the Queueemail class
-		QApplicationBase::$ClassFile['queueemail'] = __MODEL__ . '/Queueemail.class.php';
-		QApplicationBase::$ClassFile['qqnodequeueemail'] = __MODEL__ . '/Queueemail.class.php';
-		QApplicationBase::$ClassFile['qqreversereferencenodequeueemail'] = __MODEL__ . '/Queueemail.class.php';
-		QApplicationBase::$ClassFile['queueemailmetacontrol'] = __META_CONTROLS__ . '/QueueemailMetaControl.class.php';
-		QApplicationBase::$ClassFile['queueemaildatagrid'] = __META_CONTROLS__ . '/QueueemailDataGrid.class.php';
-
-	// ClassPaths for the User class
-		QApplicationBase::$ClassFile['user'] = __MODEL__ . '/User.class.php';
-		QApplicationBase::$ClassFile['qqnodeuser'] = __MODEL__ . '/User.class.php';
-		QApplicationBase::$ClassFile['qqreversereferencenodeuser'] = __MODEL__ . '/User.class.php';
-		QApplicationBase::$ClassFile['usermetacontrol'] = __META_CONTROLS__ . '/UserMetaControl.class.php';
-		QApplicationBase::$ClassFile['userdatagrid'] = __META_CONTROLS__ . '/UserDataGrid.class.php';
-
-	// ClassPaths for the Versionkcoin class
-		QApplicationBase::$ClassFile['versionkcoin'] = __MODEL__ . '/Versionkcoin.class.php';
-		QApplicationBase::$ClassFile['qqnodeversionkcoin'] = __MODEL__ . '/Versionkcoin.class.php';
-		QApplicationBase::$ClassFile['qqreversereferencenodeversionkcoin'] = __MODEL__ . '/Versionkcoin.class.php';
-		QApplicationBase::$ClassFile['versionkcoinmetacontrol'] = __META_CONTROLS__ . '/VersionkcoinMetaControl.class.php';
-		QApplicationBase::$ClassFile['versionkcoindatagrid'] = __META_CONTROLS__ . '/VersionkcoinDataGrid.class.php';
+	// ClassPaths for the Confirmation class
+		QApplicationBase::$ClassFile['confirmation'] = __MODEL__ . '/Confirmation.class.php';
+		QApplicationBase::$ClassFile['qqnodeconfirmation'] = __MODEL__ . '/Confirmation.class.php';
+		QApplicationBase::$ClassFile['qqreversereferencenodeconfirmation'] = __MODEL__ . '/Confirmation.class.php';
+		QApplicationBase::$ClassFile['confirmationmetacontrol'] = __META_CONTROLS__ . '/ConfirmationMetaControl.class.php';
+		QApplicationBase::$ClassFile['confirmationdatagrid'] = __META_CONTROLS__ . '/ConfirmationDataGrid.class.php';
 
 ?>

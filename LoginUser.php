@@ -8,31 +8,19 @@ class LoginForm extends QForm {
     protected $txtEmail;
     protected $txtPassword;
     protected $btnLogin;
-    protected $chkVendor;
+    
 
     protected function Form_Run() {
-        $Datos1 = @unserialize($_SESSION['DatosAdministrador']);
-        $Datos2 = @unserialize($_SESSION['DatosUsuario']);
-        $Datos3 = @unserialize($_SESSION['DatosUsuarioNoVerificado']);
+        $Datos1 = @unserialize($_SESSION['smsAdmin']);
 
         if ($Datos1) {
-            QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/users');
-        } elseif ($Datos2) {
-            QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/miningoptions');
-        } else {
-            if ($Datos3) {
-            QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/mining');
+            QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/confirmations');
         }
-        }
+        
+        QApplication::ExecuteJavaScript("showWarning('" . htmlentities("One of the provided details is incorrect.") . "');");
     }
 
     protected function Form_Create() {
-
-        $this->chkVendor = new QCheckBox($this, 'chkVendor');
-        $this->chkVendor->SetCustomAttribute('data-plugin', 'switchery');
-        $this->chkVendor->SetCustomAttribute('data-color', '#502581');
-        $this->chkVendor->SetCustomAttribute('data-size', "small");
-
         $this->txtEmail = new QTextBox($this, 'idTextEmail2');
         $this->txtEmail->CssClass = "form-control";
         $this->txtEmail->Placeholder = "Email";
@@ -52,59 +40,19 @@ class LoginForm extends QForm {
     }
 
     protected function btnLogin_Click($strFormId, $strControlId, $strParameter) {
-
-        if ($this->chkVendor->Checked == false) {
-            $this->loginUser();
-        } else {
-            $this->loginAdmin();
-        }
+        $this->loginUser();
     }
 
     protected function loginUser() {
-        $User = User::LoadByEmail(trim($this->txtEmail->Text));
-        if ($User) {
-            if ($User->Password == trim($this->txtPassword->Text)) {
-                $User->Password = 'NULL';
-                
-                if( $User->StatusUser == 2 ){
-                    $_SESSION['DatosUsuarioNoVerificado'] = serialize($User);
-                    QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/mining');    
-                }
-                
-                if( $User->StatusUser == 4  ){
-                    $_SESSION['DatosUsuario'] = serialize($User);
-                    QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/miningoptions');                
-                }
-                
-                if( $User->StatusUser == 1 ){
-                    QApplication::ExecuteJavaScript("showWarning('" . htmlentities("wait for the administrator to approve or reject your registration!") . "');");
-                }
-                if( $User->StatusUser == 3 ){
-                    QApplication::ExecuteJavaScript("showWarning('" . htmlentities("Your registration has been rejected!") . "');");
-                }
-                return;
-                
-            } else {
-                QApplication::ExecuteJavaScript("showWarning('" . htmlentities("One of the provided details is incorrect.") . "');");
-                return false;
-            }
-        } else {
-            QApplication::ExecuteJavaScript("showWarning('" . htmlentities("One of the provided details is incorrect.") . "');");
-            return false;
-        }
-    }
-
-    protected function loginAdmin() {
-
         $User = Administrator::LoadByEmail(trim($this->txtEmail->Text));
         if ($User) {
+            $_SESSION['smsAdmin'] = serialize($User);
             if ($User->Password == trim($this->txtPassword->Text)) {
                 $User->Password = 'NULL';
-
-                $_SESSION['DatosAdministrador'] = serialize($User);
-                QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/users');
-
+                QApplication::Redirect(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__ . '/confirmations'); 
+                
                 return;
+                
             } else {
                 QApplication::ExecuteJavaScript("showWarning('" . htmlentities("One of the provided details is incorrect.") . "');");
                 return false;
@@ -114,7 +62,6 @@ class LoginForm extends QForm {
             return false;
         }
     }
-
 }
 
 LoginForm::Run('LoginForm');

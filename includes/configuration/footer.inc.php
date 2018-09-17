@@ -25,7 +25,7 @@
 
 <!-- Footer -->
 <footer class="site-footer">
-    <span class="site-footer-legal">© <?php echo date("Y"); ?> <a href="#">KCOIN</a></span>
+    <span class="site-footer-legal">© <?php echo date("Y"); ?> <a href="#">SMS</a></span>
     <div class="site-footer-right">
         Developed by <a href="#">SUG</a>
     </div>
@@ -121,6 +121,8 @@
 
 <script src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/vendor/formatter-js/jquery.formatter.min.js"></script>
 <script src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/js/components/formatter-js.min.js"></script>
+
+<script src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/utilities/alerts.js"></script>
 
 <script>
 

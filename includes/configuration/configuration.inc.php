@@ -61,11 +61,11 @@ if (!defined('SERVER_INSTANCE')) {
              *      /var/www/qcubed/wwwroot
              */
             //define('__DOCROOT__', '/var/www/html');
-            define('__DOCROOT__', 'C:\AppServ\www');
+            define('__DOCROOT__', 'C:/xampp/htdocs');
 
             define('__VIRTUAL_DIRECTORY__', '');
 
-            define('__SUBDIRECTORY__', '/kcoin');
+            define('__SUBDIRECTORY__', '/mailerspam');
 
             
             
@@ -208,9 +208,9 @@ if (!defined('SERVER_INSTANCE')) {
                 'adapter' => 'MySqli5',
                 'server' => 'localhost',
                 'port' => 3306,
-                'database' => 'kcoin',
+                'database' => 'sms',
                 'username' => 'root',
-                'password' => '12345678',
+                'password' => '',
                 'profiling' => false)));
 
             // Additional Database Connection Strings can be defined here (e.g. for connection #2, #3, #4, #5, etc.)

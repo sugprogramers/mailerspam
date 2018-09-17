@@ -6,10 +6,10 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title><?php _p("Login Kcoin"); ?></title>
+        <title><?php _p("Login SMS"); ?></title>
 
         
-        <link rel="shortcut icon" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/sms_icon.ico">
 
         
         <!-- Stylesheets -->
@@ -18,7 +18,8 @@
         <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/css/site.min.css">
         <!-- Se agrega para cambiar color-->
          <!-- <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/cyan.css"> -->
-        <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/purple.css">
+        <!--<link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/purple.css">-->
+        <link rel="stylesheet" href="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/skin/green.css">
         <!-- Este para cambiar el tranparente login -->
          <style>
              .page-login-v2.page-dark.layout-full:after {
@@ -76,10 +77,10 @@
             <div class="page-content">
                 <div class="page-brand-info">
                     <div class="brand">
-                       <a href="index.php"><img class="brand-img" src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/logo%402x.png" alt="..."></a>
-                        <h2 class="brand-text font-size-40">KCOIN</h2>
+                       <!--<a href="index.php"><img class="brand-img" src="<?php _p(__VIRTUAL_DIRECTORY__ . __SUBDIRECTORY__); ?>/template/assets/images/logo%402x.png" alt="..."></a>-->
+                        <!--<h2 class="brand-text font-size-40">SMS</h2>-->
                     </div>
-                    <p class="font-size-18" style="color:#fff;" >The KCoin Crypto Community is an eco-system powered by Blockchain infrastructure, where new and existing ventures inspired by Kellogg students and alumni.</p>
+                    <!--<p class="font-size-18" style="color:#fff;" >The KCoin Crypto Community is an eco-system powered by Blockchain infrastructure, where new and existing ventures inspired by Kellogg students and alumni.</p>-->
                 </div>
 
                 <div class="page-login-main">
@@ -120,25 +121,14 @@
                     </div>
                     <div class="form-group clearfix">
                         <div class="pull-left">
-                            
-                         <!--<div class="checkbox-custom checkbox-inline checkbox-primary pull-left">
-                            
-                           <input type="checkbox" id="inputCheckbox" name="inputCheckbox">
-                            <label for="inputCheckbox">Remember </label>
-                            -->
-                            
-                            <!--<input type="checkbox" id="chkVendor" data-plugin="switchery" data-color="#3aa99e" />-->
-                            <?php $this->chkVendor->Render(); ?>
-                            <label for="chkVendor"><?php _p("Are you admin?"); ?></label>
-                            
                         </div>
-                        <a class="pull-right" href="forgot" style="font-size:13px;"><?php _p("Forgot your password?"); ?></a>
+                        <!--<a class="pull-right" href="forgot" style="font-size:13px;"><?php _p("Forgot your password?"); ?></a>-->
                     </div> 
                     <?= $this->btnLogin->Render(); ?>
                     <!--<button type="submit" class="btn btn-primary btn-block">Sign in</button>-->
                     <?= $this->RenderEnd(); ?>
 
-                    <center><p>Still no account? Please go to <a href="register">Register</a></p></center> 
+                    <!--<center><p>Still no account? Please go to <a href="register">Register</a></p></center> -->
                    
                    <!-- <center><p>Desea iniciar session como admin? <a href="loginadmin">Login Admin</a></p></center> -->
                      
